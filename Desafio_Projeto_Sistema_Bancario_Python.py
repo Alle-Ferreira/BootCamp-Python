@@ -1,26 +1,28 @@
-#Desafio de Projeto - Criando um Sistema Bancário com Python
+'''
+Desafio de Projeto - Criando um Sistema Bancário com Python
 
-#1. Objetivo: Criar sistema bancario
+1. Objetivo: Criar sistema bancario
 
-#2. Requisitos e Funcionalidades:
+2. Requisitos e Funcionalidades:
+   
+    2.1. Versão 1: trabalha com apenas 1 usuário, não será necessário módulo de identificação do usuário.
+        Deve ser possível depositar valores positivos.
+        Todos os depósitos e saques devem ser armazenados em variáveis.
+        A movimentação deve ser exibida em um extrato.
+        Final do extrato deve exibir o saldo atual.
+        Valores dever ser exibidos no formato 'R$ xxx.xx'.
+        Permitir apenas 3 saques diários.
+        Limite máximo por saque é de R$ 500,00.
+        Mensagem ausencia de saldo: 'Não será possível sacar o dinheiro, por falta de saldo.'.
 
-#   Versão 1: trabalha com apenas 1 usuário, não será necessário módulo de identificação do usuário.
-#   Deve ser possível depositar valores positivos.
-#   Todos os depósitos e saques devem ser armazenados em variáveis.
-#   A movimentação deve ser exibida em um extrato.
-#   Final do extrato deve exibir o saldo atual.
-#   Valores dever ser exibidos no formato 'R$ xxx.xx'.
-#   Permitir apenas 3 saques diários.
-#   Limite máximo por saque é de R$ 500,00.
-#   Mensagem ausencia de saldo: 'Não será possível sacar o dinheiro, por falta de saldo.'.
+3. Funcionalidades Adicionadas
+    
+    3.1. Versão 1: 
+        Incluida a Transferencia por Pix.
+        Limitado o montante a ser transferido diariamente a R$ 800,00
+        Limitado o valor unitario de cada pix a R$ 500,00'''
 
-#3. Funcionalidades Adicionadas:
-
-# Incluida a Transferencia por Pix.
-# Limitado o montante a ser transferido diariamente a R$ 800,00
-# Limitado o valor unitario de cada pix a R$ 500,00
-
-#4. Código da Aplicação
+# 4. Código da Aplicação
 
 LIMITE_SAQUES_DIA = 3
 LIMITE_PIX_DIA = 800
@@ -35,7 +37,6 @@ valor_sum_pix_dia = 0
 msg_sem_saldo = 'Não será possível sacar o dinheiro, por falta de saldo.'
 msg_acao_invalida = 'Operação inválida. Por favor, informe um valor válido.'
 msg_confirmacao = 'Operação realizada com sucesso!\n'
-
 
 menu = """
 Escolha a operação que gostaria de realizar:
@@ -61,7 +62,7 @@ while True:
             print(msg_confirmacao)
         else:
             print(msg_acao_invalida)
-    
+            
 #Operação 2 - Saque
     elif opcao == '2':
         print ('Operação selecionada: Saque.')
