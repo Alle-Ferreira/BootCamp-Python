@@ -55,11 +55,11 @@ def deposito(saldo, extrato, /): # passagem por posição: '/' no final
 def saque(*, saldo, extrato, saques_dia):   # passagem por nome: '*' no inicio
     saque_valor = float(input("Informe o valor a sacar: "))
     if saque_valor > saldo:
-        print('Não será possível realizar esta operação: saldo Insuficiente.')
+        print(msg_sem_saldo)
     elif saque_valor > LIMITE_SAQUES_VALOR:
-        print('Não será possível realizar esta operação: o valor excede o limite por saque.')
-    elif saques_dia > LIMITE_SAQUES_DIARIO:
-        print('Não será possível realizar esta operação: a operação excede o limite de saques diários.')
+        print(msg_limite_valor)
+    elif saques_dia >= LIMITE_SAQUES_DIARIO:
+        print(msg_limite_transacoes)
     elif saque_valor > 0:
         saldo -= saque_valor
         extrato += f'Saque no valor de: R$ {saque_valor: .2f}\n'
@@ -75,9 +75,9 @@ def pix (saldo, extrato, pix_vlr_dia, LIMITE_PIX_DIARIO, LIMITE_PIX_VALOR):
     if pix_valor > saldo:
         print(msg_sem_saldo)
     elif pix_valor > LIMITE_PIX_VALOR:
-        print(msg_limite_transacao)
+        print(msg_limite_valor)
     elif (pix_vlr_dia + pix_valor) > LIMITE_PIX_DIARIO:
-        print(msg_limite_transacao)
+        print(msg_limite_transacoes)
     elif pix_valor > 0:
         saldo -= pix_valor
         extrato += f'Pix no valor de: R$ {pix_valor: .2f}\n'
@@ -166,7 +166,8 @@ AGENCIA = '0001'
 msg_sem_saldo = 'Não será possível realizar esta operação: saldo Insuficiente.\n'
 msg_acao_invalida = 'Operação inválida. Por favor, informe um valor válido.\n'
 msg_confirmacao = 'Operação realizada com sucesso!\n'
-msg_limite_transacao = 'Não será possível realizar esta operação: o valor excede o limite.\n'
+msg_limite_valor = 'Não será possível realizar esta operação: o valor excede o limite.\n'
+msg_limite_transacoes = 'Não será possível realizar esta operação: a operação excede o limite de transações diárias.\n'
 
 while True:
     opcao = menu() 
