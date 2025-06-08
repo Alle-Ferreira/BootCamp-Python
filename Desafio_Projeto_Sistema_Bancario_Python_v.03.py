@@ -1,7 +1,7 @@
 '''
 Desafio de Projeto - Criando um Sistema Bancário com Python_v.02
 
-1. Objetivo: Incremento do sistema bancario_Inserir limite uso diário
+1. Objetivo: Incremento do sistema bancario, inserido limite de transações diárias, e registro de transações do sistema.
 
 2. Histórico de Versões
    
