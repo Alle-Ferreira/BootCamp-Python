@@ -1,5 +1,5 @@
 '''
-Desafio de Projeto - Criando um Sistema Bancário com Python_v.02
+Desafio de Projeto - Criando um Sistema Bancário com Python_v.03
 
 1. Objetivo: Incremento do sistema bancario, inserido limite de transações diárias, e registro de transações do sistema.
 
@@ -211,7 +211,7 @@ usuarios = []                                   # lista de tuplas: (cpf, nome, d
 contas = []                                     # lista de tuplas: (numero_conta, agencia, cpf)  
 AGENCIA = '0001'
 
-msg_sem_saldo = 'Não será possível realizar esta operação: saldo Insuficiente.\n'
+msg_sem_saldo = 'Não será possível realizar esta operação: saldo insuficiente.\n'
 msg_acao_invalida = 'Operação inválida. Por favor, informe um valor válido.\n'
 msg_confirmacao = 'Operação realizada com sucesso!\n'
 msg_limite_valor = 'Não será possível realizar esta operação: o valor excede o limite.\n'
